@@ -36,53 +36,18 @@
     .setClassToggle('.scroll-nav', 'fade-in')
     .addTo(ctrl);
 
-  var page01_scene = new ScrollMagic.Scene({
-        'triggerElement': '.page01',
-        'triggerHook': 0.5,
-        'duration': $('.page01').height()
-        // 'reverse': false
-    })
-    .setClassToggle('.nav-list01', 'active')
-    .addTo(ctrl);
+  var scene_list = '.nav-list01, .nav-list02, .nav-list03, .nav-list04, .nav-list05'.split(', ');
 
-  var page02_scene = new ScrollMagic.Scene({
-        'triggerElement': '.page02',
-        'triggerHook': 0.5,
-        'duration': $('.page02').height()
-        // 'reverse': false
-    })
-    .setClassToggle('.nav-list02', 'active')
-    .addTo(ctrl);
-
-  var page03_scene = new ScrollMagic.Scene({
-        'triggerElement': '.page03',
-        'triggerHook': 0.5,
-        'duration': $('.page03').height()
-        // 'reverse': false
-    })
-    .setClassToggle('.nav-list03', 'active')
-    .addTo(ctrl);
-
-  var page04_scene = new ScrollMagic.Scene({
-        'triggerElement': '.page04',
-        'triggerHook': 0.5,
-        'duration': $('.page04').height()
-        // 'reverse': false
-    })
-    .setClassToggle('.nav-list04', 'active')
-    .addTo(ctrl);
-
-  var page05_scene = new ScrollMagic.Scene({
-        'triggerElement': '.page05',
-        'triggerHook': 0.5,
-        'duration': $('.page05').height()
-        // 'reverse': false
-    })
-    .setClassToggle('.nav-list05', 'active')
-    .addTo(ctrl);
-    // var id     = $this.attr('href'),
-    //     offset = nav_height,
-    //     target = $(id).offset().top - offset;
+  scene_list.forEach(function (selector, idx) {
+    var scroll_scene = new ScrollMagic.Scene({
+          'triggerElement': `.page0${idx+1}`,
+          'triggerHook': 0.5,
+          'duration': $(`.page0${idx+1}`).height()
+          // 'reverse': false
+      })
+      .setClassToggle(selector, 'active')
+      .addTo(ctrl);
+  });
 
 
 })(this, this.jQuery);
