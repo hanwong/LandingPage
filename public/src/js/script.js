@@ -24,14 +24,62 @@
     $this.parent().radioClass('active');
   });
 
-  // var controller = new ScrollMagic.Controller();
+  var ctrl = new ScrollMagic.Controller({
+    'addIndicators': true
+  });
 
-  // var scene1 = new ScrollMagic.Scene({
-  //       duration: 100,    // the scene should last for a scroll distance of 100px
-  //       offset: 50        // start this scene after scrolling for 50px
-  //   })
-  //   .setPin("#page01") // pins the element for the the scene's duration
-  //   .addTo(controller); 
+  var scroll_scene = new ScrollMagic.Scene({
+        'triggerElement': '.page01',
+        'triggerHook': 0.5,
+        // 'reverse': false
+    })
+    .setClassToggle('.scroll-nav', 'fade-in')
+    .addTo(ctrl);
+
+  var page01_scene = new ScrollMagic.Scene({
+        'triggerElement': '.page01',
+        'triggerHook': 0.5,
+        'duration': $('.page01').height()
+        // 'reverse': false
+    })
+    .setClassToggle('.nav-list01', 'active')
+    .addTo(ctrl);
+
+  var page02_scene = new ScrollMagic.Scene({
+        'triggerElement': '.page02',
+        'triggerHook': 0.5,
+        'duration': $('.page02').height()
+        // 'reverse': false
+    })
+    .setClassToggle('.nav-list02', 'active')
+    .addTo(ctrl);
+
+  var page03_scene = new ScrollMagic.Scene({
+        'triggerElement': '.page03',
+        'triggerHook': 0.5,
+        'duration': $('.page03').height()
+        // 'reverse': false
+    })
+    .setClassToggle('.nav-list03', 'active')
+    .addTo(ctrl);
+
+  var page04_scene = new ScrollMagic.Scene({
+        'triggerElement': '.page04',
+        'triggerHook': 0.5,
+        'duration': $('.page04').height()
+        // 'reverse': false
+    })
+    .setClassToggle('.nav-list04', 'active')
+    .addTo(ctrl);
+
+  var page05_scene = new ScrollMagic.Scene({
+        'triggerElement': '.page05',
+        'triggerHook': 0.5,
+        'duration': $('.page05').height()
+        // 'reverse': false
+    })
+    .setClassToggle('.nav-list05', 'active')
+    .addTo(ctrl);
     // var id     = $this.attr('href'),
     //     offset = nav_height,
     //     target = $(id).offset().top - offset;
