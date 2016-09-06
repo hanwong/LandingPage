@@ -30,11 +30,28 @@
 
   var scroll_scene = new ScrollMagic.Scene({
         'triggerElement': '.page01',
-        'triggerHook': 0.5,
+        'triggerHook': 0.3,
         // 'reverse': false
     })
     .setClassToggle('.scroll-nav', 'fade-in')
     .addTo(ctrl);
+
+  var home_pin = new ScrollMagic.Scene({
+    'triggerElement': `.home`,
+    'triggerHook': 0,
+    'duration': '80%'
+  })
+    .setPin('.home', {'pushFollowers': false})
+    .addTo(ctrl)
+    .on('progress', function (event) {
+       var target = event.target.triggerElement();
+       // console.log(target);
+       target.style.opacity = 1 - event.progress;
+    });
+
+  $('.navigation .nav-home').on('click', function () {
+    TweenMax.from(this, 1, {css: {rotation: 180, opacity:0, scale:0.5}, ease: Quad.easeInOut});
+  })
 
   var scene_list = '.nav-list01, .nav-list02, .nav-list03, .nav-list04, .nav-list05'.split(', ');
 
