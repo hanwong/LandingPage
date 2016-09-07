@@ -36,22 +36,20 @@
     .setClassToggle('.scroll-nav', 'fade-in')
     .addTo(ctrl);
 
-  var home_pin = new ScrollMagic.Scene({
-    'triggerElement': `.home`,
-    'triggerHook': 0,
-    'duration': '80%'
-  })
-    .setPin('.home', {'pushFollowers': false})
-    .addTo(ctrl)
-    .on('progress', function (event) {
-       var target = event.target.triggerElement();
-       // console.log(target);
-       target.style.opacity = 1 - event.progress;
-    });
+  // var home_pin = new ScrollMagic.Scene({
+  //   'triggerElement': `.home`,
+  //   'triggerHook': 0,
+  //   'duration': '30%'
+  // })
+  //   .setPin('.home', {'pushFollowers': false})
+  //   .addTo(ctrl)
+  //   .on('end', function (event) {
+  //       // TweenMax.to( 'main .home', 1, {'x': -1000, 'autoAlpha': 0, 'ease': Power0.easeNone});
+  //   });
 
-  $('.navigation .nav-home').on('click', function () {
-    TweenMax.from(this, 1, {css: {rotation: 180, opacity:0, scale:0.5}, ease: Quad.easeInOut});
-  })
+  // $('.navigation .nav-home').on('click', function () {
+  //   TweenMax.from(this, 1, {css: {rotation: 180, opacity:0, scale:0.5}, ease: Quad.easeInOut});
+  // })
 
   var scene_list = '.nav-list01, .nav-list02, .nav-list03, .nav-list04, .nav-list05'.split(', ');
 
