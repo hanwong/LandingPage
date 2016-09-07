@@ -43,7 +43,7 @@
  * @param  {this} event
  * @return {this}
  */
-  var $nav = $('.navigation'), 
+  var $nav = $('.gnb-nav'), 
   nav_height = $nav.height();
 
   function gotoPages(event) {

@@ -2,9 +2,9 @@
   'use strict';
 
   var $html = $('html'),
-  $nav_home = $('.nav-home'),
-  $nav_list = $('.nav-list'),
-  $scroll_nav = $('.scroll-nav');
+  $gnb_home = $('.gnb-home'),
+  $gnb_nav_list = $('.gnb-nav-list'),
+  $side_nav = $('.side-nav');
   
   // js 설정 가는 환경 체크 
   $('html').removeClass('no-js').addClass('js');
@@ -14,18 +14,18 @@
 
   // page navigation
 
-  $nav_home.find('a').on('click', function () {
+  $gnb_home.find('a').on('click', function () {
     gotoPages.call(this, event);
   });
 
-  $nav_list.find('a').on('click', function () {
+  $gnb_nav_list.find('a').on('click', function () {
     gotoPages.call(this, event);
     var $this = $.$(this);
     $this.parent().radioClass('active');
   });
 
   // side scroll navigation
-  $scroll_nav.find('a').on('click', function () {
+  $side_nav.find('a').on('click', function () {
     gotoPages.call(this, event);
     var $this = $.$(this);
     $this.parent().radioClass('active');
@@ -40,11 +40,11 @@
         'triggerHook': 0.3,
         // 'reverse': false
     })
-    .setClassToggle('.scroll-nav', 'fade-in')
+    .setClassToggle('.side-nav', 'fade-in')
     .addTo(ctrl);
 
-  var page_list_scene = '.nav-page01, .nav-page02, .nav-page03, .nav-page04, .nav-page05'.split(', ');
-  page_list_scene.forEach(function (selector, idx) {
+  var gnb_scene = '.gnb-page01, .gnb-page02, .gnb-page03, .gnb-page04, .gnb-page05'.split(', ');
+  gnb_scene.forEach(function (selector, idx) {
     var scroll_scene = new ScrollMagic.Scene({
           'triggerElement': `.page0${idx+1}`,
           'triggerHook': 0.5,
@@ -55,8 +55,8 @@
       .addTo(ctrl);
   });
 
-  var nav_list_scene = '.nav-list01, .nav-list02, .nav-list03, .nav-list04, .nav-list05'.split(', ');
-  nav_list_scene.forEach(function (selector, idx) {
+  var side_scene = '.side-page01, .side-page02, .side-page03, .side-page04, .side-page05'.split(', ');
+  side_scene.forEach(function (selector, idx) {
     var scroll_scene = new ScrollMagic.Scene({
           'triggerElement': `.page0${idx+1}`,
           'triggerHook': 0.5,

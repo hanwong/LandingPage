@@ -302,7 +302,7 @@ table {
   background: #6666FF;
 }
 
-.navigation {
+.gnb-nav {
   position: fixed;
   z-index: 1000;
   display: flex;
@@ -312,30 +312,30 @@ table {
   background: rgba(255, 255, 255, 0.5);
 }
 
-.navigation div {
+.gnb-nav div {
   flex: 0 0 10%;
   display: flex;
   justify-content: center;
   text-transform: capitalize;
 }
 
-.navigation div a {
+.gnb-nav div a {
   text-decoration: none;
   color: #000;
 }
 
-.navigation .nav-list {
+.gnb-nav .gnb-nav-list {
   flex: 1;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.navigation .nav-list .active, .navigation .nav-list div:hover {
+.gnb-nav .gnb-nav-list .active, .gnb-nav .gnb-nav-list div:hover {
   border-bottom: 1px solid #000;
 }
 
-.scroll-nav {
+.side-nav {
   opacity: 0;
   transition: all 0.3s ease;
   position: fixed;
@@ -346,17 +346,17 @@ table {
   text-align: right;
 }
 
-.scroll-nav.fade-in {
+.side-nav.fade-in {
   opacity: 1;
 }
 
-.scroll-nav li {
+.side-nav li {
   list-style-type: none;
   padding: 5px;
   margin: 1px;
 }
 
-.scroll-nav li::after {
+.side-nav li::after {
   content: '';
   display: inline-block;
   width: 7px;
@@ -366,7 +366,7 @@ table {
   background-color: #000;
 }
 
-.scroll-nav .active, .scroll-nav li:hover {
+.side-nav .active, .side-nav li:hover {
   list-style-type: none;
   padding: 5px;
   margin: 1px;
@@ -375,12 +375,12 @@ table {
   transition: all 0.3s ease;
 }
 
-.scroll-nav .active::after, .scroll-nav li:hover::after {
+.side-nav .active::after, .side-nav li:hover::after {
   background-color: #B3B3B3;
   transition: all 0.3s ease;
 }
 
-.scroll-nav a {
+.side-nav a {
   opacity: 0;
   margin-left: 10px;
   margin-right: 10px;
@@ -388,7 +388,7 @@ table {
   text-decoration: none;
 }
 
-.scroll-nav .active a, .scroll-nav li:hover a {
+.side-nav .active a, .side-nav li:hover a {
   opacity: 1;
   transition: all 0.3s ease;
 }
