@@ -2,7 +2,8 @@
 
  var gulp        = require('gulp'),
      sourcemaps  = require('gulp-sourcemaps'),
-     sass        = require('gulp-sass');
+     sass        = require('gulp-sass'),
+     uglify = require("gulp-uglify");
 
  gulp.task('sass', function () {
     return gulp.src('public/src/sass/**/*.{sass,scss}')
@@ -15,6 +16,15 @@
  gulp.task('watch', function () {
    gulp.watch('public/src/sass/**/*.{sass,scss}', ['sass']);
  });
+
+// gulp.task("uglify", function(){
+//   return gulp.src("public/src/js/*.js").pipe(uglify()).pipe(gulp.dest("/public/dist/"));
+// });
+
+// gulp.task("watch", function(){
+//   gulp.watch("public/src/js/*.js",["uglify"]);
+// });
+
 
 gulp.task("default", ["watch"]);
  

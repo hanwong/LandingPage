@@ -25,7 +25,7 @@
 
   // gnb navigation 영역 ScrollMagic 추가
   var ctrl = new ScrollMagic.Controller({
-    'addIndicators': true
+    'addIndicators': false
   });
   var gnb_scene = '.gnb-page01, .gnb-page02, .gnb-page03, .gnb-page04, .gnb-page05'.split(', ');
   gnb_scene.forEach(function (selector, idx) {
@@ -46,6 +46,7 @@
     $this.parent().radioClass('active');
   });
 
+  // side navigation 영역 ScrollMagic 추가
   var scroll_scene = new ScrollMagic.Scene({
         'triggerElement': '.page01',
         'triggerHook': 0.3,
@@ -54,7 +55,6 @@
     .setClassToggle('.side-nav', 'fade-in')
     .addTo(ctrl);
 
-  // side navigation 영역 ScrollMagic 추가
   var side_scene = '.side-page01, .side-page02, .side-page03, .side-page04, .side-page05'.split(', ');
   side_scene.forEach(function (selector, idx) {
     var scroll_scene = new ScrollMagic.Scene({
@@ -67,20 +67,6 @@
       .addTo(ctrl);
   });
 
-  // var home_pin = new ScrollMagic.Scene({
-  //   'triggerElement': `.home`,
-  //   'triggerHook': 0,
-  //   'duration': '30%'
-  // })
-  //   .setPin('.home', {'pushFollowers': false})
-  //   .addTo(ctrl)
-  //   .on('end', function (event) {
-  //       // TweenMax.to( 'main .home', 1, {'x': -1000, 'autoAlpha': 0, 'ease': Power0.easeNone});
-  //   });
-
-  // $('.navigation .nav-home').on('click', function () {
-  //   TweenMax.from(this, 1, {css: {rotation: 180, opacity:0, scale:0.5}, ease: Quad.easeInOut});
-  // })
 
 
 })(this, this.jQuery);
