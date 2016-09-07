@@ -331,6 +331,10 @@ table {
   align-items: center;
 }
 
+.navigation .nav-list .active, .navigation .nav-list div:hover {
+  border-bottom: 1px solid #000;
+}
+
 .scroll-nav {
   opacity: 0;
   transition: all 0.3s ease;
