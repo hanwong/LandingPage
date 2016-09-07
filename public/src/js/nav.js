@@ -1,16 +1,9 @@
 (function(global, $){
   'use strict';
 
-  var $html = $('html'),
-  $gnb_home = $('.gnb-home'),
+  var $gnb_home = $('.gnb-home'),
   $gnb_nav_list = $('.gnb-nav-list'),
   $side_nav = $('.side-nav');
-  
-  // js 설정 가는 환경 체크 
-  $('html').removeClass('no-js').addClass('js');
-  $(window).on('load resize', {'i': 0}, function(event) {
-    changeDeviceMode($html, event.data.i++ === 0 ? true : false);
-  });
 
   // gnb navigation 링크 이동시 active 클래스 추가
   $gnb_home.find('a').on('click', function () {
