@@ -1,6 +1,23 @@
 <main>
-  <section class="home" id="home" >home</section>
-  <section class="page01" id="page01" >page01</section>
+  <div data-ng-app="ngCarousel">
+    
+    <section class="home" id="home" data-ng-controller="homeCtrl as home">
+       <ul class="home-carousel">
+         <li class={{item.class}} data-ng-class="{'active': home.isSelected( '{{item.class}}' )}" data-ng-repeat="item in home.contents">
+           <div class="text-items">
+             <div class="item-name">{{item.name}}</div>
+             <div class="item-description">{{item.description}}</div>
+           </div>
+           <div class="item-img"><img data-ng-src="{{item.img}}" alt="{{item.name}}"></div>
+         </li>
+       </ul>
+       <button type="button" class="prev" data-ng-click="home.prevItem()">&lt;</button>
+       <button type="button" class="next" data-ng-click="home.nextItem()">&gt;</button>
+    </section>
+
+    <section class="page01" id="page01">page01</section>
+    
+  </div>
   <section class="page02" id="page02" >page02</section>
   <section class="page03" id="page03" >page03</section>
   <section class="page04" id="page04" >page04</section>

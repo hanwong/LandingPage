@@ -1,7 +1,11 @@
 (function(global, ng, jq){
   'use strict';
-
-  var app = ng.module('ngCarousel', []);
+  
+  
+  ng.moduel('ng-carousel')
+    .controller('peopleCtrl', ['', function(){
+      
+    }]);
 
 //END IIFE PATTERN
 })(this, this.angular, this.jQuery);

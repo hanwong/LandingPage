@@ -396,4 +396,46 @@ table {
   transition: all 0.3s ease;
 }
 
+.home {
+  position: relative;
+}
+
+.home .prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+.home .next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.home .home-carousel li {
+  display: none;
+}
+
+.home .home-carousel li.active {
+  display: flex;
+}
+
+.home .home-carousel li .text-items {
+  flex: 1 0 40%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.home .home-carousel li .text-items .item-name {
+  font-size: 30px;
+}
+
+.home .home-carousel li .text-items .item-description {
+  font-size: 14px;
+}
+
+.home .home-carousel li .item-img {
+  flex: 1 0 50%;
+}
+
 /*# sourceMappingURL=../css/maps/style.css.map */

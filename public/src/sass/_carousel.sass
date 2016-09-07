@@ -1,0 +1,25 @@
+.home
+  position: relative
+  .prev
+    position: absolute
+    top: 50%
+    left: 0
+  .next
+    position: absolute
+    top: 50%
+    right: 0
+  .home-carousel
+    li
+      display: none
+      &.active
+        display: flex
+      .text-items
+        flex: 1 0 40%
+        padding-left: 5%
+        padding-right: 5%
+        .item-name
+          font-size: 30px
+        .item-description
+          font-size: 14px
+      .item-img
+        flex: 1 0 50%
