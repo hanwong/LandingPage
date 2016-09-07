@@ -49,8 +49,11 @@
         // console.log(this.contents[current_item].class);
          return this.contents[current_item].class === cls;
       }
+        
+  });
 
-    });
+      // var carousel_tl = new TimelineMax();
+      // carousel_tl.to( '.home-carousel li', 1, {'opacity': 1, 'ease': Quad.easeInOut});
 
 //END IIFE PATTERN
 })(this, this.angular, this.jQuery);

@@ -3,5 +3,7 @@
 
   var app = ng.module('ngCarousel', []);
 
+
+
 //END IIFE PATTERN
 })(this, this.angular, this.jQuery);

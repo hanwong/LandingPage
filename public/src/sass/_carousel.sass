@@ -23,3 +23,44 @@
           font-size: 14px
       .item-img
         flex: 1 0 50%
+
+.page01
+  position: relative
+  .prev
+    position: absolute
+    top: 35%
+    left: 50%
+    transform: translate(-150px, 0)
+  .next
+    position: absolute
+    top: 35%
+    right: 50%
+    transform: translate(150px, 0)
+  .people-carousel
+    display: flex
+    li
+      display: none
+      &.active, &.standby-left, &.standby-right
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 300px
+        .item-name
+          font-size: 30px
+        .item-description
+          font-size: 14px
+        .item-role
+          font-size: 14px
+      &.active
+        order: 2
+        .item-description
+          display: block
+      &.standby-left
+        order: 1
+        .item-description
+          display: none
+      &.standby-right
+        order: 3
+        .item-description
+          display: none

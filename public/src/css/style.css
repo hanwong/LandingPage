@@ -438,4 +438,74 @@ table {
   flex: 1 0 50%;
 }
 
+.page01 {
+  position: relative;
+}
+
+.page01 .prev {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-150px, 0);
+}
+
+.page01 .next {
+  position: absolute;
+  top: 35%;
+  right: 50%;
+  transform: translate(150px, 0);
+}
+
+.page01 .people-carousel {
+  display: flex;
+}
+
+.page01 .people-carousel li {
+  display: none;
+}
+
+.page01 .people-carousel li.active, .page01 .people-carousel li.standby-left, .page01 .people-carousel li.standby-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+
+.page01 .people-carousel li.active .item-name, .page01 .people-carousel li.standby-left .item-name, .page01 .people-carousel li.standby-right .item-name {
+  font-size: 30px;
+}
+
+.page01 .people-carousel li.active .item-description, .page01 .people-carousel li.standby-left .item-description, .page01 .people-carousel li.standby-right .item-description {
+  font-size: 14px;
+}
+
+.page01 .people-carousel li.active .item-role, .page01 .people-carousel li.standby-left .item-role, .page01 .people-carousel li.standby-right .item-role {
+  font-size: 14px;
+}
+
+.page01 .people-carousel li.active {
+  order: 2;
+}
+
+.page01 .people-carousel li.active .item-description {
+  display: block;
+}
+
+.page01 .people-carousel li.standby-left {
+  order: 1;
+}
+
+.page01 .people-carousel li.standby-left .item-description {
+  display: none;
+}
+
+.page01 .people-carousel li.standby-right {
+  order: 3;
+}
+
+.page01 .people-carousel li.standby-right .item-description {
+  display: none;
+}
+
 /*# sourceMappingURL=../css/maps/style.css.map */

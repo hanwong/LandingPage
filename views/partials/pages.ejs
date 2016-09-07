@@ -15,8 +15,23 @@
        <button type="button" class="next" data-ng-click="home.nextItem()">&gt;</button>
     </section>
 
-    <section class="page01" id="page01">page01</section>
-    
+    <section class="page01" id="page01" data-ng-controller="peopleCtrl as people">
+       <ul class="people-carousel">
+         <li class={{item.class}} 
+            data-ng-class="{'active': people.isSelected( '{{item.class}}' ), 
+            'standby-right': people.isStandbyRight( '{{item.class}}' ),
+            'standby-left': people.isStandbyLeft( '{{item.class}}' ) }" 
+            data-ng-repeat="item in people.contents">
+           <div class="item-img"><img data-ng-src="{{item.img}}" alt="{{item.name}}"></div>
+           <div class="item-description">{{item.description}}</div>
+           <div class="item-name">{{item.name}}</div>
+           <div class="item-role">{{item.role}}</div>
+         </li>
+       </ul>
+       <button type="button" class="prev" data-ng-click="people.prevItem()">&lt;</button>
+       <button type="button" class="next" data-ng-click="people.nextItem()">&gt;</button>
+    </section>
+
   </div>
   <section class="page02" id="page02" >page02</section>
   <section class="page03" id="page03" >page03</section>

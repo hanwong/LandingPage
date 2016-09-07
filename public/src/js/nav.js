@@ -18,7 +18,7 @@
 
   // gnb navigation 영역 ScrollMagic 추가
   var ctrl = new ScrollMagic.Controller({
-    'addIndicators': false
+    'addIndicators': true
   });
   var gnb_scene = '.gnb-page01, .gnb-page02, .gnb-page03, .gnb-page04, .gnb-page05'.split(', ');
   gnb_scene.forEach(function (selector, idx) {
