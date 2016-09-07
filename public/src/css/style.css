@@ -356,12 +356,23 @@ table {
   margin: 1px;
 }
 
-.side-nav li::after {
+.side-nav a {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.side-nav a span {
+  opacity: 0;
+}
+
+.side-nav a::after {
   content: '';
   display: inline-block;
   width: 7px;
   height: 7px;
-  margin-right: 10px;
+  margin-left: 10px;
   border-radius: 50%;
   background-color: #000;
 }
@@ -372,23 +383,15 @@ table {
   margin: 1px;
   border-radius: 20px;
   background-color: #fff;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
-.side-nav .active::after, .side-nav li:hover::after {
+.side-nav .active a::after, .side-nav li:hover a::after {
   background-color: #B3B3B3;
   transition: all 0.3s ease;
 }
 
-.side-nav a {
-  opacity: 0;
-  margin-left: 10px;
-  margin-right: 10px;
-  color: #000;
-  text-decoration: none;
-}
-
-.side-nav .active a, .side-nav li:hover a {
+.side-nav .active span, .side-nav li:hover span {
   opacity: 1;
   transition: all 0.3s ease;
 }

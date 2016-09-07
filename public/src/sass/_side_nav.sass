@@ -16,34 +16,35 @@
     padding: 5px
     margin: 1px
 
-  li::after
+  a
+    margin-left: 10px
+    margin-right: 10px
+    color: #000
+    text-decoration: none
+    span
+      opacity: 0
+
+  a::after
     content: ''
     display: inline-block
     width: 7px
     height: 7px
-    margin-right: 10px
+    margin-left: 10px
     border-radius: 50%
     background-color: #000
 
-  .active, li:hover
+  .active, li:hover 
     list-style-type: none
     padding: 5px
     margin: 1px
     border-radius: 20px
     background-color: #fff
-    transition: all 0.3s ease
+    transition: background-color 0.3s ease
 
-  .active::after, li:hover::after
+  .active a::after, li:hover a::after
     background-color: #B3B3B3
     transition: all 0.3s ease
 
-  a
-    opacity: 0
-    margin-left: 10px
-    margin-right: 10px
-    color: #000
-    text-decoration: none
-
-  .active a, li:hover a,
+  .active span, li:hover span,
     opacity: 1
     transition: all 0.3s ease
