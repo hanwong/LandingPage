@@ -43,7 +43,10 @@
       <li class="{{item.category}}" 
         data-ng-class="{ 'selected': list.currentCategory( '{{item.category}}' )}" 
         data-ng-repeat="item in list.contents">
-        {{item.name}}
+        <div class="card">
+          <div class="front">{{item.name}}</div>
+          <div class="back">{{item.description}}</div>
+        </div>
       </li>
     </ul>
   </section>
