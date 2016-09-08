@@ -36,7 +36,7 @@
       this.prevItem = function () {
         current_item === 0 ? current_item = item_length - 1 : current_item-- ;
         current_item = Math.abs(current_item % item_length);
-        console.log(current_item);
+        // console.log(current_item);
         return current_item;
       };
       this.nextItem = function () {
