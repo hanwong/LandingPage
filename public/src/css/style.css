@@ -271,7 +271,7 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  min-height: 90vh;
   width: 100%;
   font-size: 40px;
   color: #fff;
@@ -279,6 +279,7 @@ table {
 }
 
 .home {
+  min-height: 100vh;
   background: #3666E1;
 }
 
@@ -403,13 +404,13 @@ table {
 .home .prev {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 5%;
 }
 
 .home .next {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 5%;
 }
 
 .home .home-carousel li {
@@ -483,7 +484,7 @@ table {
 }
 
 .page01 .people-carousel li.current {
-  margin-left: 33%;
+  margin-left: 33.333%;
 }
 
 .page01 .people-carousel li.current .item-description {
@@ -499,7 +500,7 @@ table {
 }
 
 .page01 .people-carousel li.standby-right {
-  margin-left: 66%;
+  margin-left: 66.666%;
 }
 
 .page01 .people-carousel li.standby-right .item-description {

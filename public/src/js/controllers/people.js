@@ -75,36 +75,27 @@
          if ( this.contents[current_item].class === cls ) {
             className = 'current';
          } else if ( this.contents[left_item].class === cls  ) {
-             className = 'standby-left';
+            className = 'standby-left';
          } else if ( this.contents[right_item].class === cls  ) {
-             className = 'standby-right';
+            className = 'standby-right';
          }
          return className;
       }
         
   })
     .animation('.people-animation', function () {
+      var people_tl = new TimelineMax();
+      console.log('animation: ', this);
+
       return {
         'addClass': function (element, className, done) {
-          console.log('people_addClass: ', className);
-          // if (className === 'standby-left') {
-          //   console.log('__people_addClass: ', className);
-          //   TimelineMax.to(element, 1, { left: 50, onComplete: done });
-          // }
-          // else {
-          //   done();
-          // }
+          // console.log('people_addClass: ', className);
+          console.log('people_addClass: ', arguments);
+
         },
         'removeClass': function (element, className, done) {
-          console.log('people_removeClass: ', className);
-          // if (className == 'standby-left') {
-          //   console.log('__people_removeClass: ', className);
-          //   element.removeClass('standby-left');
-          //   TimelineMax.to(element, 1,  { left: 50, onComplete: done });
-          // }
-          // else {
-          //   done();
-          // }
+          // console.log('people_removeClass: ', className);
+
         },
         'setClass': function(element, addedClass, removedClass, done) {
           // console.log('people_setClass: ', element,  addedClass, removedClass, done);
