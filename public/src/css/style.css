@@ -337,7 +337,8 @@ table {
 }
 
 .side-nav {
-  opacity: 0;
+  display: none;
+  cursor: default;
   transition: all 0.3s ease;
   position: fixed;
   z-index: 999;
@@ -348,7 +349,7 @@ table {
 }
 
 .side-nav.fade-in {
-  opacity: 1;
+  display: block;
 }
 
 .side-nav li {
@@ -493,6 +494,7 @@ table {
 
 .page01 .people-carousel li.standby-left {
   margin-left: 0%;
+  transform: scale(0.8);
 }
 
 .page01 .people-carousel li.standby-left .item-description {
@@ -501,10 +503,50 @@ table {
 
 .page01 .people-carousel li.standby-right {
   margin-left: 66.666%;
+  transform: scale(0.8);
 }
 
 .page01 .people-carousel li.standby-right .item-description {
   display: none;
+}
+
+.page02 {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.page02 .filter-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 10px;
+}
+
+.page02 .filter-btns button {
+  font-size: 30px;
+}
+
+.page02 .filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: space-around;
+  width: 450px;
+  height: auto;
+}
+
+.page02 .filter-list .selected {
+  display: block;
+}
+
+.page02 .filter-list li {
+  display: none;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background: #B3B3B3;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=../css/maps/style.css.map */

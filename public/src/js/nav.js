@@ -39,14 +39,17 @@
     $this.parent().radioClass('active');
   });
 
+  var products_tl = new TimelineMax();
+    products_tl.fromTo('.side-nav', 0.5, { 'opacity': 0 }, { 'opacity': 1 });
   // side navigation 영역 ScrollMagic 추가
   var scroll_scene = new ScrollMagic.Scene({
         'triggerElement': '.page01',
-        'triggerHook': 0.3,
+        'triggerHook': 0.5,
         // 'reverse': false
     })
     .setClassToggle('.side-nav', 'fade-in')
-    .addTo(ctrl);
+    .addTo(ctrl)
+    .setTween(products_tl);
 
   var side_scene = '.side-page01, .side-page02, .side-page03, .side-page04, .side-page05'.split(', ');
   side_scene.forEach(function (selector, idx) {

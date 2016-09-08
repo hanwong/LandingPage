@@ -36,19 +36,19 @@
       this.prevItem = function () {
         current_item === 0 ? current_item = item_length - 1 : current_item-- ;
         current_item = Math.abs(current_item % item_length);
-        // console.log(current_item);
+        console.log(current_item);
         return current_item;
-      }
+      };
       this.nextItem = function () {
         current_item++;
         current_item = Math.abs(current_item % item_length);
         // console.log(current_item);
         return current_item;
-      }
+      };
       this.isSelected = function (cls) {
         // console.log(this.contents[current_item].class);
          return this.contents[current_item].class === cls;
-      }
+      };
         
   })
     .animation('.home-animation', function () {

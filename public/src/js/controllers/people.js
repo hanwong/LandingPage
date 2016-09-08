@@ -55,13 +55,13 @@
         current_item = Math.abs(current_item % item_length);
         // console.log(current_item);
         return current_item;
-      }
+      };
       this.nextItem = function () {
         current_item++;
         current_item = Math.abs(current_item % item_length);
         // console.log(current_item);
         return current_item;
-      }
+      };
 
       this.currentClass = function (cls) {
          var className = '';
@@ -80,17 +80,17 @@
             className = 'standby-right';
          }
          return className;
-      }
+      };
         
   })
     .animation('.people-animation', function () {
       var people_tl = new TimelineMax();
-      console.log('animation: ', this);
+      // console.log('animation: ', this);
 
       return {
         'addClass': function (element, className, done) {
           // console.log('people_addClass: ', className);
-          console.log('people_addClass: ', arguments);
+          // console.log('people_addClass: ', arguments);
 
         },
         'removeClass': function (element, className, done) {

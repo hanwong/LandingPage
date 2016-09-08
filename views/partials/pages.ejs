@@ -32,11 +32,20 @@
      <button type="button" class="next" data-ng-click="people.nextItem()">&gt;</button>
   </section>
 
-  <section class="page02" id="page02" >
-    <button type="button">all</button>
-    <button type="button">apps</button>
-    <button type="button">branding</button>
-    <button type="button">web</button>
+  <section class="page02" id="page02" data-ng-controller="listCtrl as list">
+    <div class="filter-btns">
+      <button type="button" data-ng-click="list.sortItems('all')">all</button>
+      <button type="button" data-ng-click="list.sortItems('app')">app</button>
+      <button type="button" data-ng-click="list.sortItems('branding')">branding</button>
+      <button type="button" data-ng-click="list.sortItems('web')">web</button>
+    </div>
+    <ul class="filter-list">
+      <li class="{{item.category}}" 
+        data-ng-class="{ 'selected': list.currentCategory( '{{item.category}}' )}" 
+        data-ng-repeat="item in list.contents">
+        {{item.name}}
+      </li>
+    </ul>
   </section>
 
   <section class="page03" id="page03" >page03</section>
