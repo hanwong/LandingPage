@@ -1,7 +1,7 @@
 (function(global, ng, jq){
   'use strict';
   
-  ng.module('ngCarousel')
+  ng.module('ngUI')
     .controller('peopleCtrl', function(){
 
       this.contents = [

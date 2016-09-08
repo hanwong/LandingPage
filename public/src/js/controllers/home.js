@@ -1,7 +1,7 @@
 (function(global, ng, jq){
   'use strict';
   
-  ng.module('ngCarousel')
+  ng.module('ngUI')
     .controller('homeCtrl', function(){
 
       this.contents = [
@@ -50,6 +50,29 @@
          return this.contents[current_item].class === cls;
       }
         
+  })
+    .animation('.panel-animation', function () {
+      return {
+        addClass: function (element, className, done) {
+          console.log('addClass: ', element, className, done);
+          if (className == 'active') {
+            TweenMax.fromTo(element, 1, { opacity: 0}, { opacity: 1, onComplete: done });
+          }
+          else {
+          done();
+          }
+        },
+        removeClass: function (element, className, done) {
+          console.log('removeClass: ', element, className, done);
+          if (className == 'active') {
+            element.removeClass('active');
+            TweenMax.fromTo(element, 1, { opacity: 1, left: -element.width() }, { opacity: 0, left: 0, onComplete: done });
+          }
+          else {
+            done();
+          }
+        }
+    };
   });
 
       // var carousel_tl = new TimelineMax();

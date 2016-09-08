@@ -10,18 +10,18 @@ app.use('/public', express.static(__dirname + '/public'));
 app.set('port', 3030);
 
 
-app.use(function(req, res){
-  // 404 Error
-  if(res.status('404')){
-    res.type('text/plain');
-    res.send('404 - Not found!!!');
-  }
-  // 500 Error
-  if(res.status('500')){
-    res.type('text/plain');
-    res.send('500 - Server Error!!!');
-  }
-});
+// app.use(function(req, res){
+//   // 404 Error
+//   if(res.status('404')){
+//     res.type('text/plain');
+//     res.send('404 - Not found!!!');
+//   }
+//   // 500 Error
+//   if(res.status('500')){
+//     res.type('text/plain');
+//     res.send('500 - Server Error!!!');
+//   }
+// });
 
 
 app.listen(app.get('port'), function(){
