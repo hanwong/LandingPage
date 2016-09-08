@@ -456,15 +456,13 @@ table {
   transform: translate(150px, 0);
 }
 
-.page01 .people-carousel {
-  display: flex;
-}
-
 .page01 .people-carousel li {
   display: none;
 }
 
-.page01 .people-carousel li.active, .page01 .people-carousel li.standby-left, .page01 .people-carousel li.standby-right {
+.page01 .people-carousel li.current, .page01 .people-carousel li.standby-left, .page01 .people-carousel li.standby-right {
+  float: left;
+  margin-right: -100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -472,28 +470,28 @@ table {
   width: 300px;
 }
 
-.page01 .people-carousel li.active .item-name, .page01 .people-carousel li.standby-left .item-name, .page01 .people-carousel li.standby-right .item-name {
+.page01 .people-carousel li.current .item-name, .page01 .people-carousel li.standby-left .item-name, .page01 .people-carousel li.standby-right .item-name {
   font-size: 30px;
 }
 
-.page01 .people-carousel li.active .item-description, .page01 .people-carousel li.standby-left .item-description, .page01 .people-carousel li.standby-right .item-description {
+.page01 .people-carousel li.current .item-description, .page01 .people-carousel li.standby-left .item-description, .page01 .people-carousel li.standby-right .item-description {
   font-size: 14px;
 }
 
-.page01 .people-carousel li.active .item-role, .page01 .people-carousel li.standby-left .item-role, .page01 .people-carousel li.standby-right .item-role {
+.page01 .people-carousel li.current .item-role, .page01 .people-carousel li.standby-left .item-role, .page01 .people-carousel li.standby-right .item-role {
   font-size: 14px;
 }
 
-.page01 .people-carousel li.active {
-  order: 2;
+.page01 .people-carousel li.current {
+  margin-left: 33%;
 }
 
-.page01 .people-carousel li.active .item-description {
+.page01 .people-carousel li.current .item-description {
   display: block;
 }
 
 .page01 .people-carousel li.standby-left {
-  order: 1;
+  margin-left: 0%;
 }
 
 .page01 .people-carousel li.standby-left .item-description {
@@ -501,7 +499,7 @@ table {
 }
 
 .page01 .people-carousel li.standby-right {
-  order: 3;
+  margin-left: 66%;
 }
 
 .page01 .people-carousel li.standby-right .item-description {

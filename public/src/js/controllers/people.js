@@ -63,24 +63,54 @@
         return current_item;
       }
 
-      this.isSelected = function (cls) {
-        // console.log(this.contents[current_item].class);
-         return this.contents[current_item].class === cls;
-      }
-
-      this.isStandbyLeft = function (cls) {
-        // console.log(this.contents[current_item].class);
+      this.currentClass = function (cls) {
+         var className = '';
+         
          var left_item = current_item === 0 ? item_length - 1 : current_item - 1 ;
          left_item = Math.abs(left_item % item_length);
-         return this.contents[left_item].class === cls;
-      }
-      this.isStandbyRight = function (cls) {
-        // console.log(this.contents[current_item].class);
+         
          var right_item = current_item + 1;
          right_item = Math.abs(right_item % item_length);
-         return this.contents[right_item].class === cls;
+         
+         if ( this.contents[current_item].class === cls ) {
+            className = 'current';
+         } else if ( this.contents[left_item].class === cls  ) {
+             className = 'standby-left';
+         } else if ( this.contents[right_item].class === cls  ) {
+             className = 'standby-right';
+         }
+         return className;
       }
         
+  })
+    .animation('.people-animation', function () {
+      return {
+        'addClass': function (element, className, done) {
+          console.log('people_addClass: ', className);
+          // if (className === 'standby-left') {
+          //   console.log('__people_addClass: ', className);
+          //   TimelineMax.to(element, 1, { left: 50, onComplete: done });
+          // }
+          // else {
+          //   done();
+          // }
+        },
+        'removeClass': function (element, className, done) {
+          console.log('people_removeClass: ', className);
+          // if (className == 'standby-left') {
+          //   console.log('__people_removeClass: ', className);
+          //   element.removeClass('standby-left');
+          //   TimelineMax.to(element, 1,  { left: 50, onComplete: done });
+          // }
+          // else {
+          //   done();
+          // }
+        },
+        'setClass': function(element, addedClass, removedClass, done) {
+          // console.log('people_setClass: ', element,  addedClass, removedClass, done);
+          // TweenMax.fromTo(element, 1, { opacity: 0}, { opacity: 1, onComplete: done });
+        }
+    };
   });
 
 //END IIFE PATTERN

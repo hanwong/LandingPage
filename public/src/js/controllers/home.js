@@ -51,26 +51,30 @@
       }
         
   })
-    .animation('.panel-animation', function () {
+    .animation('.home-animation', function () {
       return {
-        addClass: function (element, className, done) {
+        'addClass': function (element, className, done) {
+          if (className === 'active') {
           console.log('addClass: ', element, className, done);
-          if (className == 'active') {
             TweenMax.fromTo(element, 1, { opacity: 0}, { opacity: 1, onComplete: done });
-          }
-          else {
-          done();
-          }
-        },
-        removeClass: function (element, className, done) {
-          console.log('removeClass: ', element, className, done);
-          if (className == 'active') {
-            element.removeClass('active');
-            TweenMax.fromTo(element, 1, { opacity: 1, left: -element.width() }, { opacity: 0, left: 0, onComplete: done });
           }
           else {
             done();
           }
+        },
+        'removeClass': function (element, className, done) {
+          if (className === 'active') {
+          console.log('removeClass: ', element, className, done);
+            element.removeClass('active');
+            TweenMax.fromTo(element, 1, { opacity: 1 }, { opacity: 0, onComplete: done });
+          }
+          else {
+            done();
+          }
+        },
+        'setClass': function(element, addedClass, removedClass, done) {
+          console.log('setClass: ', element,  addedClass, removedClass, done);
+          // TweenMax.fromTo(element, 1, { opacity: 0}, { opacity: 1, onComplete: done });
         }
     };
   });

@@ -2,7 +2,7 @@
     
   <section class="home" id="home" data-ng-controller="homeCtrl as home">
      <ul class="home-carousel">
-       <li class="{{item.class}} panel-animation" 
+       <li class="{{item.class}} home-animation" 
           data-ng-class="{'active': home.isSelected( '{{item.class}}' )}" 
           data-ng-repeat="item in home.contents">
           <!-- data-ng-if="home.isSelected( '{{item.class}}' )" -->
@@ -19,11 +19,12 @@
 
   <section class="page01" id="page01" data-ng-controller="peopleCtrl as people">
      <ul class="people-carousel">
-       <li class="{{item.class}}"
-          data-ng-class="{'active': people.isSelected( '{{item.class}}' ), 
-          'standby-right': people.isStandbyRight( '{{item.class}}' ),
-          'standby-left': people.isStandbyLeft( '{{item.class}}' ) }" 
+       <li class="{{item.class}} people-animation"
+          data-ng-class="people.currentClass( '{{item.class}}' )"
           data-ng-repeat="item in people.contents">
+<!--           data-ng-class="{'current': people.isSelected( '{{item.class}}' ), 
+          'standby-right': people.isStandbyRight( '{{item.class}}' ),
+          'standby-left': people.isStandbyLeft( '{{item.class}}' ) }"  -->
          <div class="item-img"><img data-ng-src="{{item.img}}" alt="{{item.name}}"></div>
          <div class="item-description">{{item.description}}</div>
          <div class="item-name">{{item.name}}</div>
