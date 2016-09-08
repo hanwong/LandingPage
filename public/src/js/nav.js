@@ -40,7 +40,8 @@
   });
 
   var products_tl = new TimelineMax();
-    products_tl.fromTo('.side-nav', 0.5, { 'opacity': 0 }, { 'opacity': 1 });
+    products_tl
+    .fromTo('.side-nav', 0.3, { 'opacity': 0 }, { 'opacity': 1 });
   // side navigation 영역 ScrollMagic 추가
   var scroll_scene = new ScrollMagic.Scene({
         'triggerElement': '.page01',
