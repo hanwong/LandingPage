@@ -40,7 +40,7 @@
       <button type="button" data-ng-click="list.sortItems('web')">web</button>
     </div>
     <ul class="filter-list">
-      <li class="{{item.category}}" 
+      <li class="{{item.category}} list-animation" 
         data-ng-class="{ 'selected': list.currentCategory( '{{item.category}}' )}" 
         data-ng-repeat="item in list.contents">
         <div class="card">
