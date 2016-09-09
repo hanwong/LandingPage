@@ -47,6 +47,7 @@
   nav_height = $nav.height();
 
   function gotoPages(event) {
+    // console.log(arguments);
     event.preventDefault();
     // console.log( '객체 생성 전:', $.data(this, '$this') );
     var id     = $.$(this).attr('href'),
@@ -58,8 +59,40 @@
     }, 400);
   }
 
+/**
+ * viewUpdate
+ * ---------------------------------------------
+ * @작성자    hanwong
+ * @버전     0.0.1
+ * @param  {this} index
+ * @return {this}
+ */
+  var xhr = new XMLHttpRequest;
+  var views = 'page01 page02 page03 page04 page05'.split(' ');
+
+  function viewUpdate (index) {
+    var page;
+    if ( typeof(index) === 'number' ) {
+      console.log(index);
+      page = '#' + views[index];
+      xhr.open('GET', page);
+      xhr.send();
+    }
+    else {
+      console.log(index);
+      page = '#';
+      xhr.open('GET', page);
+      xhr.send(); 
+    }
+    // 페이지의 주소(해쉬) 값을 변경
+    global.location.hash = page;
+
+    // 웹 브라우저가 수행하는 브라우저의 기본 동작 차단
+    // return false;
+  }
 
   global.changeDeviceMode = changeDeviceMode;
   global.gotoPages = gotoPages;
+  global.viewUpdate = viewUpdate;
   
 })(this, this.jQuery);
