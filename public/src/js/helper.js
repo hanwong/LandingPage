@@ -73,13 +73,13 @@
   function viewUpdate (index) {
     var page;
     if ( typeof(index) === 'number' ) {
-      console.log(index);
+      // console.log(index);
       page = '#' + views[index];
       xhr.open('GET', page);
       xhr.send();
     }
     else {
-      console.log(index);
+      // console.log(index);
       page = '#';
       xhr.open('GET', page);
       xhr.send(); 
