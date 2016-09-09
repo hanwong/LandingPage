@@ -54,27 +54,7 @@
     .animation('.home-animation', function () {
       return {
         'addClass': function (element, className, done) {
-          if (className === 'active') {
-          // console.log('addClass: ', element, className, done);
-            TweenMax.fromTo(element, 1, { opacity: 0}, { opacity: 1, onComplete: done });
-          }
-          else {
-            done();
-          }
-        },
-        'removeClass': function (element, className, done) {
-          if (className === 'active') {
-          // console.log('removeClass: ', element, className, done);
-            element.removeClass('active');
-            TweenMax.fromTo(element, 1, { opacity: 1 }, { opacity: 0, onComplete: done });
-          }
-          else {
-            done();
-          }
-        },
-        'setClass': function(element, addedClass, removedClass, done) {
-          console.log('setClass: ', element,  addedClass, removedClass, done);
-          // TweenMax.fromTo(element, 1, { opacity: 0}, { opacity: 1, onComplete: done });
+          TweenMax.fromTo(element, 1, { opacity: 0}, { opacity: 1, onComplete: done });
         }
     };
   });
