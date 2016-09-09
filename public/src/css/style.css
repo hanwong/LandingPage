@@ -336,6 +336,10 @@ table {
   border-bottom: 1px solid #000;
 }
 
+.lg .gnb-nav-list {
+  justify-content: space-around;
+}
+
 .side-nav {
   display: none;
   cursor: default;
