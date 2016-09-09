@@ -23,9 +23,11 @@
           data-ng-class="people.currentClass( '{{item.class}}' )"
           data-ng-repeat="item in people.contents">
          <div class="item-img"><img data-ng-src="{{item.img}}" alt="{{item.name}}"></div>
-         <div class="item-description">{{item.description}}</div>
-         <div class="item-name">{{item.name}}</div>
-         <div class="item-role">{{item.role}}</div>
+         <div class="item-text">
+           <div class="item-description">{{item.description}}</div>
+           <div class="item-name">{{item.name}}</div>
+           <div class="item-role">{{item.role}}</div>
+         </div>
        </li>
      </ul>
      <button type="button" class="prev" data-ng-click="people.prevItem()">&lt;</button>

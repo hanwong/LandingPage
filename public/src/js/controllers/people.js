@@ -84,12 +84,9 @@
         
   })
     .animation('.people-animation', function () {
-      var people_tl = new TimelineMax();
-      // console.log('animation: ', this);
-
       return {
         'addClass': function (element, className, done) {
-          console.log('people_addClass: ', className);
+          // console.log('people_addClass: ', className);
           // console.log('people_addClass: ', arguments);
 
         },
@@ -99,26 +96,60 @@
         },
         'setClass': function(element, addedClass, removedClass, done) {
           // console.log('people_addedClass: ', addedClass, 'people_removedClass: ',removedClass);
-          // TweenMax.fromTo(element, 1, { opacity: 0}, { opacity: 1, onComplete: done });
+          
           // next버튼 클릭시
           if ( addedClass === 'standby-left' && removedClass === 'current' ) {
-            console.log('이동전 current class', element); // 이동전 current class
-            people_tl.fromTo(element, 1, { left: -50 }, { left: 50, onComplete: done });
-          }
-          if ( addedClass === 'current' && removedClass === 'standby-right' ) {
-            console.log('이동전 standby-right class', element);
-            people_tl.fromTo(element, 1, { left: -50 }, { left: 50, onComplete: done });
+
+            if (!element.next().next()[0] && element.next()[0]) {
+              TweenMax.fromTo(element, 0.5, { x: 300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+              TweenMax.fromTo(element.next(), 0.5, { x: 300, scale: 0.8 }, { x: 0, scale: 1, onComplete: done });
+              TweenMax.fromTo(element.parent().children().eq(0), 0.5, { x: 300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done }); 
+              TweenMax.fromTo(element.next().find('.item-text'), 0.5, { y: -100 }, { y: 0, onComplete: done });
+            }
+            else if (!element.next().next()[0] && !element.next()[0]) {
+              TweenMax.fromTo(element, 0.5, { x: 300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+              TweenMax.fromTo(element.parent().children().eq(0), 0.5, { x: 300, scale: 0.8 }, { x: 0, scale: 1, onComplete: done });
+              TweenMax.fromTo(element.parent().children().eq(1), 0.5, { x: 300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done }); 
+              TweenMax.fromTo(element.parent().children().eq(0).find('.item-text'), 0.5, { y: -100 }, { y: 0, onComplete: done });
+            }
+            else {
+              TweenMax.fromTo(element, 0.5, { x: 300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+              TweenMax.fromTo(element.next(), 0.5, { x: 300, scale: 0.8 }, { x: 0, scale: 1, onComplete: done });
+              TweenMax.fromTo(element.next().next(), 0.5, { x: 300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+              TweenMax.fromTo(element.next().find('.item-text'), 0.5, { y: -100 }, { y: 0, onComplete: done });
+            }
+            
           }
 
           // prev버튼 클릭시
           if ( addedClass === 'current' && removedClass === 'standby-left' ) {
-            console.log('이동전 standby-left class', element); // 이동전 current class
-            people_tl.fromTo(element, 1, { right: -50 }, { right: 50, onComplete: done });
+            // console.log('000', element.prev()[0]); // 이동전 current class, 마지막 체크
+            // console.log('111', element[0]); // 이동전 current class
+            // console.log('222', element.next()[0]); // 이동전 current class, 맨처음에 체크 할것
+            
+            if (!element.next()[0]) {
+              TweenMax.fromTo(element.prev(), 0.5, { x: -300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+              TweenMax.fromTo(element, 0.5, { x: -300, scale: 0.8 }, { x: 0, scale: 1, onComplete: done });
+              TweenMax.fromTo(element.parent().children().eq(0), 0.5, { x: -300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+            }
+            else if (!element.prev()[0]) {
+              TweenMax.fromTo(element.parent().children().last(), 0.5, { x: -300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+              TweenMax.fromTo(element, 0.5, { x: -300, scale: 0.8 }, { x: 0, scale: 1, onComplete: done });
+              TweenMax.fromTo(element.next(), 0.5, { x: -300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+            }
+            else {
+              TweenMax.fromTo(element.prev(), 0.5, { x: -300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+              TweenMax.fromTo(element, 0.5, { x: -300, scale: 0.8 }, { x: 0, scale: 1, onComplete: done });
+              TweenMax.fromTo(element.next(), 0.5, { x: -300, scale: 1 }, { x: 0, scale: 0.8, onComplete: done });
+              // TimelineMax.fromTo(element.next().find('.item-text'), 0.5, { y: 50 }, { y: 0, onComplete: done });
+            }
+            TweenMax.fromTo(element.find('.item-text'), 0.5, { y: -100 }, { y: 0, onComplete: done });
+
           }
-          if ( addedClass === 'standby-right' && removedClass === 'current' ) {
-            console.log('이동전 current class', element); // 이동전 current class
-            people_tl.fromTo(element, 1, { right: -50 }, { right: 50, onComplete: done });
-          }
+          // if ( addedClass === 'standby-right' && removedClass === 'current' ) {
+          //   console.log('이동전 current class', element); // 이동전 current class
+          //   people_tl.fromTo(element, 1, { right: -50 }, { right: 50, onComplete: done });
+          // }
         }
     };
   });
