@@ -89,7 +89,7 @@
 
       return {
         'addClass': function (element, className, done) {
-          // console.log('people_addClass: ', className);
+          console.log('people_addClass: ', className);
           // console.log('people_addClass: ', arguments);
 
         },
@@ -98,8 +98,27 @@
 
         },
         'setClass': function(element, addedClass, removedClass, done) {
-          // console.log('people_setClass: ', element,  addedClass, removedClass, done);
+          // console.log('people_addedClass: ', addedClass, 'people_removedClass: ',removedClass);
           // TweenMax.fromTo(element, 1, { opacity: 0}, { opacity: 1, onComplete: done });
+          // next버튼 클릭시
+          if ( addedClass === 'standby-left' && removedClass === 'current' ) {
+            console.log('이동전 current class', element); // 이동전 current class
+            people_tl.fromTo(element, 1, { left: -50 }, { left: 50, onComplete: done });
+          }
+          if ( addedClass === 'current' && removedClass === 'standby-right' ) {
+            console.log('이동전 standby-right class', element);
+            people_tl.fromTo(element, 1, { left: -50 }, { left: 50, onComplete: done });
+          }
+
+          // prev버튼 클릭시
+          if ( addedClass === 'current' && removedClass === 'standby-left' ) {
+            console.log('이동전 standby-left class', element); // 이동전 current class
+            people_tl.fromTo(element, 1, { right: -50 }, { right: 50, onComplete: done });
+          }
+          if ( addedClass === 'standby-right' && removedClass === 'current' ) {
+            console.log('이동전 current class', element); // 이동전 current class
+            people_tl.fromTo(element, 1, { right: -50 }, { right: 50, onComplete: done });
+          }
         }
     };
   });
