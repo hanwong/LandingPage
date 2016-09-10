@@ -35,22 +35,92 @@
   </section>
 
   <section class="page02" id="page02" data-ng-controller="listCtrl as list">
-    <div class="filter-btns">
-      <button type="button" data-ng-click="list.sortItems('all')">all</button>
-      <button type="button" data-ng-click="list.sortItems('app')">app</button>
-      <button type="button" data-ng-click="list.sortItems('branding')">branding</button>
-      <button type="button" data-ng-click="list.sortItems('web')">web</button>
+    <div class="button-group filter-button-group">
+      <button class="button is-checked" data-filter="*">all</button>
+      <button class="button" data-filter=".app">app</button>
+      <button class="button" data-filter=".branding">branding</button>
+      <button class="button" data-filter=".web">web</button>
     </div>
-    <ul class="filter-list">
-      <li class="{{item.category}} list-animation" 
-        data-ng-class="{ 'selected': list.currentCategory( '{{item.category}}' )}" 
-        data-ng-repeat="item in list.contents">
+    <div class="filter-list grid">
+      <!-- <div class="{{item.category}} element-item" data-ng-repeat="item in list.contents">
         <div class="card">
           <div class="front">{{item.name}}</div>
           <div class="back">{{item.description}}</div>
         </div>
-      </li>
-    </ul>
+      </div> -->
+      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item app">
+        <div class="card">
+          <div class="front">This is App.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item app">
+        <div class="card">
+          <div class="front">This is App.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item app">
+        <div class="card">
+          <div class="front">This is App.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item branding">
+        <div class="card">
+          <div class="front">This is Branding.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item branding">
+        <div class="card">
+          <div class="front">This is Branding.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item branding">
+        <div class="card">
+          <div class="front">This is Branding.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item branding">
+        <div class="card">
+          <div class="front">This is Branding.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="page03" id="page03" data-ng-controller="testCtrl">

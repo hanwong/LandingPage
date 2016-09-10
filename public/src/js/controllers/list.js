@@ -83,7 +83,7 @@
         },
         {
           'category': 'web',
-          'name': 'This is name.',
+          'name': 'This is web.',
           'description': 'This is description.',
           'link': 'http://',
           'img': 'img.png'
@@ -102,18 +102,18 @@
           return this.selected_index === cls;
         }
       };
-    })
-    .animation('.list-animation', function () {
-       return {
-        'addClass': function (element, className, done) {
-           TweenMax.fromTo(element, 1, { opacity: 0, scale: 0.5}, { opacity: 1, scale: 1, onComplete: done }); 
-        },
-        'removeClass': function (element, className, done) {
-          // console.log(className);
-           TweenMax.fromTo(element, 1, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5, onComplete: done }); 
-        }
-       }
     });
+    // .animation('.list-animation', function () {
+    //    return {
+    //     'addClass': function (element, className, done) {
+    //        TweenMax.fromTo(element, 1, { opacity: 0, scale: 0.5}, { opacity: 1, scale: 1, onComplete: done }); 
+    //     },
+    //     'removeClass': function (element, className, done) {
+    //       // console.log(className);
+    //        TweenMax.fromTo(element, 1, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5, onComplete: done }); 
+    //     }
+    //    }
+    // });
 
 
 //END IIFE PATTERN
