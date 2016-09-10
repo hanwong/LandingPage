@@ -35,92 +35,101 @@
   </section>
 
   <section class="page02" id="page02" data-ng-controller="listCtrl as list">
-    <div class="button-group filter-button-group">
-      <button class="button is-checked" data-filter="*">all</button>
+
+    <div class="btn-group" isotope-filter isotope-filter-event="filter-elements" >
+      <button isotope-filter-by="*" class="btn btn-default active">all</button>
+      <button isotope-filter-by=".app" class="btn btn-default">app</button>
+      <button isotope-filter-by=".branding" class="btn btn-default">branding</button>
+      <button isotope-filter-by=".web" class="btn btn-default">web</button>
+<!--       <button class="button is-checked" data-filter="*">all</button>
       <button class="button" data-filter=".app">app</button>
       <button class="button" data-filter=".branding">branding</button>
-      <button class="button" data-filter=".web">web</button>
+      <button class="button" data-filter=".web">web</button> -->
     </div>
-    <div class="filter-list grid">
-      <!-- <div class="{{item.category}} element-item" data-ng-repeat="item in list.contents">
-        <div class="card">
-          <div class="front">{{item.name}}</div>
-          <div class="back">{{item.description}}</div>
-        </div>
-      </div> -->
-      <div class="element-item web">
-        <div class="card">
-          <div class="front">This is Web.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item app">
-        <div class="card">
-          <div class="front">This is App.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item web">
-        <div class="card">
-          <div class="front">This is Web.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item app">
-        <div class="card">
-          <div class="front">This is App.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item web">
-        <div class="card">
-          <div class="front">This is Web.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item app">
-        <div class="card">
-          <div class="front">This is App.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item web">
-        <div class="card">
-          <div class="front">This is Web.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item branding">
-        <div class="card">
-          <div class="front">This is Branding.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item branding">
-        <div class="card">
-          <div class="front">This is Branding.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item branding">
-        <div class="card">
-          <div class="front">This is Branding.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item branding">
-        <div class="card">
-          <div class="front">This is Branding.</div>
-          <div class="back">This is Back.</div>
-        </div>
-      </div>
-      <div class="element-item web">
-        <div class="card">
-          <div class="front">This is Web.</div>
-          <div class="back">This is Back.</div>
-        </div>
+
+ 
+    <div isotope-grid="list.contents" isotope-filter-event="filter-elements" isotope-reload-event="reload-elements" >
+      <div class="{{item.category}} element-item" data-ng-repeat="item in list.contents">
+        <article class="card">
+          <span class="front">{{item.name}}</span>
+          <span class="back">{{item.description}}</span>
+        </article>
       </div>
     </div>
+
+ <!--      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item app">
+        <div class="card">
+          <div class="front">This is App.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item app">
+        <div class="card">
+          <div class="front">This is App.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item app">
+        <div class="card">
+          <div class="front">This is App.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item branding">
+        <div class="card">
+          <div class="front">This is Branding.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item branding">
+        <div class="card">
+          <div class="front">This is Branding.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item branding">
+        <div class="card">
+          <div class="front">This is Branding.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item branding">
+        <div class="card">
+          <div class="front">This is Branding.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>
+      <div class="element-item web">
+        <div class="card">
+          <div class="front">This is Web.</div>
+          <div class="back">This is Back.</div>
+        </div>
+      </div>  
+    </div> -->
   </section>
 
   <section class="page03" id="page03" data-ng-controller="testCtrl">

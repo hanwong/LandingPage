@@ -530,13 +530,7 @@ table {
   font-size: 30px;
 }
 
-.page02 .filter-list {
-  width: 650px;
-  height: auto;
-}
-
-.page02 .filter-list .element-item {
-  display: block;
+.page02 .element-item {
   position: relative;
   float: left;
   width: 150px;
@@ -547,7 +541,7 @@ table {
   perspective: 600px;
 }
 
-.page02 .filter-list .element-item .card {
+.page02 .element-item .card {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -555,7 +549,7 @@ table {
   transition: transform 1s;
 }
 
-.page02 .filter-list .element-item .card div {
+.page02 .element-item .card span {
   margin: 0;
   display: block;
   position: absolute;
@@ -564,18 +558,34 @@ table {
   backface-visibility: hidden;
 }
 
-.page02 .filter-list .element-item .card .front {
+.page02 .element-item .card .front {
   background: #B3B3B3;
 }
 
-.page02 .filter-list .element-item .card .back {
+.page02 .element-item .card .back {
   color: #000;
   background: #FFFFFF;
   transform: rotateY(180deg);
 }
 
-.page02 .filter-list .element-item .card:hover {
+.page02 .element-item .card:hover {
   transform: rotateY(180deg);
+}
+
+.wide .ng-isolate-scope, .lg .ng-isolate-scope {
+  width: 650px;
+}
+
+.md .ng-isolate-scope {
+  width: 500px;
+}
+
+.xs .ng-isolate-scope {
+  width: 250px;
+}
+
+.xs .element-item {
+  width: 230px;
 }
 
 /*# sourceMappingURL=../css/maps/style.css.map */
